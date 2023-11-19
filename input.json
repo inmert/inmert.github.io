@@ -1,6 +1,6 @@
 [
   {
-    "level": "error",
+    "level": "BRUSSDA",
     "message": "Failed to connect to DB",
     "resourceId": "server-1234",
     "timestamp": "2023-09-15T08:00:00Z",
