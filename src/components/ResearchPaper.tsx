@@ -12,11 +12,11 @@ export const ResearchPaper = ({ paper }: ResearchPaperProps) => (
     <p className="text-gray-500 text-sm mb-3">{paper.authors}</p>
     <a
       href={paper.link}
-      className="text-red-500 font-semibold hover:underline"
+      className="inline-block px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors"
       target="_blank"
       rel="noopener noreferrer"
     >
-      Read Paper →
+      Read Full Paper →
     </a>
   </div>
 );
