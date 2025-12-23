@@ -24,7 +24,7 @@ export const RESEARCH: ResearchPaper[] = [
   },
   {
     title: "Modeling of Chilled Water VAV Systems Using a Machine Learning Approach.",
-    venue: "nternational Conference on Artificial Intelligence 2019",
+    venue: "International Conference on Artificial Intelligence 2019",
     description: "This paper presents a machine learning model using bootstrap aggregation to predict chilled water AHU performance, demonstrating 95–99.9% accuracy and outperforming traditional vector machine and neural network models.",
     authors: "Rand Talib, Priyan Rai, Dr. Nabil Nassif, Mostafa Tahmasebi",
     link: "https://www.researchgate.net/publication/336752644_Modeling_of_Chilled_Water_VAV_Systems_Using_a_Machine_Learning_Approach"
