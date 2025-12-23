@@ -24,6 +24,7 @@ import {
   SiRedis
 } from 'react-icons/si';
 
+// Placeholder images
 import profileImage from './assets/priyan.jpeg';
 import arachnidLogo from './assets/arachnid.png';
 import nokiaLogo from './assets/nokia.jpg';
@@ -39,6 +40,7 @@ interface Experience {
   company: string;
   period: string;
   bullets: string[];
+  skills: string[];
 }
 
 interface HeaderProps {
@@ -216,60 +218,67 @@ const EXPERIENCES = [
     logo: arachnidLogo,
     title: "Co-Founder | Chief Operating Officer",
     company: "Arachnid Systems",
-    period: "2023 – Present",
+    period: "Jul 2025 – Present",
     bullets: [
-      "Designed modular robotic inspection systems for aviation and infrastructure.",
-      "Built cloud-native services and sensor data pipelines.",
-      "Worked across robotics, AI, and distributed systems.",
-      "Managed cross-functional teams and product roadmaps.",
-      "Implemented CI/CD pipelines for robotics software."
-    ]
+      "Designed and deployed ROS-based robotic perception systems on NVIDIA Jetson Nano, integrating hyperspectral sensors and Intel RealSense cameras for real-time, edge-based environmental sensing and depth perception.",
+      "Optimized GPU-accelerated sensor fusion and on-device inference pipelines (CUDA/TensorRT), enabling low-latency processing and reduced reliance on cloud-based computation.",
+      "Designed and trained deep learning segmentation models to classify terrain, infrastructure, and surface using hyperspectral and RGB-D data for autonomous navigation and inspection.",
+      "Utilized Unreal Engine to build high-fidelity robotic and drone simulation environments for sensor modeling, SLAM validation, and machine learning dataset generation, accelerating development and reducing real-world testing risk.",
+      "Developed object detection models to identify and track airplanes from aerial and ground-based imagery, supporting autonomous drone navigation and airfield monitoring use cases.",
+      "Led operational strategy for robotics and drone-focused initiatives, aligning engineering, product, and business execution to deliver scalable autonomous systems."
+    ],
+    skills: ["Python", "ROS", "CUDA", "TensorRT", "Unreal Engine", "Computer Vision", "Deep Learning", "NVIDIA Jetson"]
   },
   {
     logo: nokiaLogo,
     title: "Senior Software Architect",
     company: "Nokia",
-    period: "2021 – 2023",
+    period: "Nov 2023 – Aug 2025",
     bullets: [
-      "Developed ML models for anomaly detection and automation.",
-      "Worked with large-scale datasets and production AI pipelines.",
-      "Collaborated with customers to deploy scalable AI solutions.",
-      "Optimized cloud-native microservices for performance and reliability."
-    ]
+      "Deployed Nokia Policy Controller on OpenStack in both VNF and CNF architectures, leveraging OpenStack CLI, HEAT templates for configuration management, and Kubernetes for container orchestration.",
+      "Designed and implemented health check tools in Python and Bash for Kubernetes clusters for KDDI and T-Mobile, employing prometheus-client, requests, and shell scripting to monitor pod health, node performance, and service uptime.",
+      "Developed a DNS automation tool in Python for AT&T, utilizing libraries like zeep for SOAP API interactions, Incorporated large dataset manipulation using polars to efficiently process and manage bulk DNS records.",
+      "Created a custom backup management application in Python for PTA Australia's next-generation railway communications project, managing push/pull backups across over 40 nodes using paramiko, rsync and cron."
+    ],
+    skills: ["Python", "Kubernetes", "OpenStack", "Ansible", "Helm", "Bash", "Prometheus", "Grafana"]
   },
   {
     logo: unrealLogo,
     title: "Freelance Video Game Developer",
     company: "Unreal Engine UG",
-    period: "2023 – Present",
+    period: "Jan 2023 – Sep 2023",
     bullets: [
-      "Designed and published AntBox Simulator on itch.io.",
-      "Implemented game mechanics and physics in Unreal Engine.",
-      "Created modular assets and reusable Blueprints.",
-      "Optimized performance for low-spec devices."
-    ]
+      "Designed, developed, and shipped Antbox Simulator using Unreal Engine, implementing core gameplay mechanics, simulation systems, UI, and optimized rendering.",
+      "Built custom gameplay systems and editor tools to support sandbox-style interaction, physics-driven behaviors, and smooth performance across target platforms.",
+      "Implemented dynamic environment interactions and modular ant colony mechanics, enabling emergent gameplay and realistic simulation within the sandbox world.",
+      "Owned the complete development lifecycle—from concept and prototyping to publishing Antbox Simulator on itch.io, delivering updates, fixes, and feature improvements based on player feedback."
+    ],
+    skills: ["C++", "Unreal Engine", "Game Design", "Physics Systems"]
   },
   {
     logo: shpLogo,
     title: "Software Architect",
     company: "SHP",
-    period: "2023 – Present",
+    period: "Aug 2019 – Aug 2021",
     bullets: [
-      "Designed modular robotic inspection systems for aviation and infrastructure.",
-      "Built cloud-native services and sensor data pipelines.",
-      "Worked across robotics, AI, and distributed systems."
-    ]
+      "Developed tools for Autodesk Revit using C# and the Revit API, enabling intelligent layout of building interiors and exteriors to optimize space utilization and enhance Building Information Modeling (BIM) workflows.",
+      "Utilized LINQ and asynchronous programming in C# to improve data querying efficiency and enhance plugin responsiveness during complex model operations.",
+      "Automated architectural chart generation through custom Revit plugins, integrating seamlessly into BIM processes to reduce manual effort, improve documentation accuracy, and ensure consistency across projects."
+    ],
+    skills: ["C#", "Revit API", "BIM", "LINQ", ".NET"]
   },
   {
     logo: ucLogo,
     title: "Research Engineer",
     company: "UC CEAS",
-    period: "2023 – Present",
+    period: "Aug 2018 – Jul 2019",
     bullets: [
-      "Designed modular robotic inspection systems for aviation and infrastructure.",
-      "Built cloud-native services and sensor data pipelines.",
-      "Worked across robotics, AI, and distributed systems."
-    ]
+      "Developed and implemented three distinct prediction models employing Bagging, Nearest Neighbor, and Linear Regression algorithms.",
+      "Published multiple research papers in reputable journals, showcasing comprehensive analyses and comparisons of these models and their respective efficiencies.",
+      "Collaborated with cross-functional teams to integrate machine learning models into real-world applications, enhancing predictive maintenance and operational efficiency.",
+      "Conducted extensive testing and validation of machine learning models, ensuring robust performance and reliability in real-world applications."
+    ],
+    skills: ["Python", "ROS", "Computer Vision", "TensorFlow"]
   }
 ];
 
@@ -363,10 +372,10 @@ const AboutSection = () => (
         </div>
       </div>
       <div>
-        <h2 className="text-4xl font-bold mb-4">Hi, I'm Priyan</h2>
+        <h2 className="text-red-500 text-4xl font-bold mb-4">Hi, I'm Priyan</h2>
         <p className="text-gray-700 text-lg leading-relaxed mb-4">
-          Co-building Arachnid Systems, where we’re engineering modular robots aiding deployable surface inspections for aviation, infrastructure, and industrial diagnostics. 
-           From smart systems to insights, we’re rethinking how technology adapts to real-world inspection challenges.
+          Co-building Arachnid Systems, where we're engineering modular robots aiding deployable surface inspections for aviation, infrastructure, and industrial diagnostics. 
+           From smart systems to insights, we're rethinking how technology adapts to real-world inspection challenges.
         </p>
         <p className="text-gray-700 text-lg leading-relaxed mb-6">
           By day, I craft elegant code, tame containers, and build models that actually converge.
@@ -379,7 +388,7 @@ const AboutSection = () => (
 );
 
 const ExperienceCard = ({ experience, index, onMoreClick }: ExperienceCardProps) => (
-  <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+  <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm h-full flex flex-col">
     <div className="flex flex-col md:flex-row gap-4 items-start md:items-center mb-4">
       <div className="shrink-0">
         <div className="w-14 h-14 bg-gray-100 rounded-lg flex items-center justify-center overflow-hidden">
@@ -394,27 +403,28 @@ const ExperienceCard = ({ experience, index, onMoreClick }: ExperienceCardProps)
       </div>
     </div>
 
-    <ul className="list-disc list-inside text-gray-700 space-y-1">
-      {experience.bullets.slice(0, 3).map((bullet, i) => (
-        <li key={i}>{bullet}</li>
-      ))}
-    </ul>
+    <div className="relative flex-1 overflow-hidden">
+      <ul className="list-disc list-inside text-gray-700 space-y-1">
+        {experience.bullets.slice(0, 2).map((bullet, i) => (
+          <li key={i} className={i === 1 ? "line-clamp-2" : ""}>{bullet}</li>
+        ))}
+      </ul>
+      <div className="absolute bottom-0 left-0 right-0 h-12 bg-linear-to-t from-white to-transparent pointer-events-none"></div>
+    </div>
 
-    {experience.bullets.length > 3 && (
-      <button
-        className="mt-2 text-red-500 font-semibold hover:underline"
-        onClick={() => onMoreClick(index)}
-      >
-        More
-      </button>
-    )}
+    <button
+      className="mt-2 text-red-500 font-semibold hover:underline self-start"
+      onClick={() => onMoreClick(index)}
+    >
+      More
+    </button>
   </div>
 );
 
 const ExperienceSection = ({ onMoreClick }: ExperienceSectionProps) => (
   <section id="experience" className="mb-16 max-w-6xl mx-auto scroll-mt-24">
     <h2 className="text-4xl font-bold mb-8">Experiences</h2>
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 auto-rows-fr">
       {EXPERIENCES.map((exp, index) => (
         <ExperienceCard
           key={index}
@@ -435,8 +445,8 @@ const ExperienceModal = ({ modalIndex, onClose }: ExperienceModalProps) => {
   return (
     <>
       <div className="fixed inset-0 bg-black opacity-80 z-50" onClick={onClose}></div>
-      <div className="fixed inset-0 flex items-center justify-center z-50 pointer-events-none">
-        <div className="bg-white rounded-lg max-w-lg w-full p-6 relative pointer-events-auto">
+      <div className="fixed inset-0 flex items-center justify-center z-50 pointer-events-none p-4">
+        <div className="bg-white rounded-lg max-w-lg w-full p-6 relative pointer-events-auto max-h-[90vh] overflow-y-auto">
           <button
             className="absolute top-4 right-4 text-black hover:text-red-500"
             onClick={onClose}
@@ -460,11 +470,19 @@ const ExperienceModal = ({ modalIndex, onClose }: ExperienceModalProps) => {
             </div>
           </div>
 
-          <ul className="list-disc list-inside text-gray-700 space-y-2">
+          <ul className="list-disc list-inside text-gray-700 space-y-2 mb-4">
             {experience.bullets.map((bullet, i) => (
               <li key={i}>{bullet}</li>
             ))}
           </ul>
+
+          <div className="flex flex-wrap gap-2">
+            {experience.skills.map((skill, i) => (
+              <span key={i} className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">
+                {skill}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </>
