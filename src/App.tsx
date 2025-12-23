@@ -24,10 +24,10 @@ function App() {
 
       <main className="pt-40 p-8">
         <AboutSection />
+        <SkillsSection />
         <ExperienceSection onMoreClick={setModalIndex} />
         <ProjectsSection />
         <ResearchSection />
-        <SkillsSection />
         <ExtrasSection />
       </main>
 

@@ -26,6 +26,7 @@ export interface ResearchPaper {
 export interface Skill {
   name: string;
   icon: any;
+  color?: string;
 }
 
 export interface SkillCategory {

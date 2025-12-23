@@ -5,7 +5,7 @@ interface MobileMenuProps {
   setIsMenuOpen: (isOpen: boolean) => void;
 }
 
-const MENU_SECTIONS = ['about', 'experience', 'projects', 'research', 'skills', 'extras', 'contact'];
+const MENU_SECTIONS = ['about', 'skills', 'experience', 'projects', 'research', 'extras', 'contact'];
 
 export const MobileMenu = ({ isMenuOpen, setIsMenuOpen }: MobileMenuProps) => (
   <>
