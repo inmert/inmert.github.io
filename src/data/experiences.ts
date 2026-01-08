@@ -12,7 +12,7 @@ export const EXPERIENCES: Experience[] = [
     company: "Arachnid Systems",
     period: "Jul 2025 — Present",
     bullets: [
-      "Designed and deployed ROS-based robotic perception systems on NVIDIA Jetson Nano, integrating hyperspectral sensors and Intel RealSense cameras for real-time, edge-based environmental sensing and depth perception.",
+      "Designed and deployed ROS-based robotic perception systems on NVIDIA Jetson Nano, integrating hyperspectral sensors and Intel RealSense cameras for real-time, edge-based environmental sensing.",
       "Optimized GPU-accelerated sensor fusion and on-device inference pipelines (CUDA/TensorRT), enabling low-latency processing and reduced reliance on cloud-based computation.",
       "Designed and trained deep learning segmentation models to classify terrain, infrastructure, and surface using hyperspectral and RGB-D data for autonomous navigation and inspection.",
       "Utilized Unreal Engine to build high-fidelity robotic and drone simulation environments for sensor modeling, SLAM validation, and machine learning dataset generation, accelerating development and reducing real-world testing risk.",

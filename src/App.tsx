@@ -8,6 +8,7 @@ import { ProjectsSection } from './components/ProjectsSection';
 import { ResearchSection } from './components/ResearchSection';
 import { SkillsSection } from './components/SkillsSection';
 import { ExtrasSection } from './components/ExtrasSection';
+import { Footer } from './components/Footer';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,6 +31,7 @@ function App() {
         <ResearchSection />
         <ExtrasSection />
       </main>
+      <Footer />
 
       <ExperienceModal modalIndex={modalIndex} onClose={() => setModalIndex(null)} />
     </div>
