@@ -1,2 +1,2 @@
 # inmert.github.io
-Personal Website
+Personal Website written in Vite + React + Tailwind
