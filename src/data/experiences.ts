@@ -8,7 +8,7 @@ import ucLogo from '../assets/uc.png';
 export const EXPERIENCES: Experience[] = [
   {
     logo: arachnidLogo,
-    title: "Co-Founder | Chief Operating Officer",
+    title: "Co-Founder | Chief Technology Officer",
     company: "Arachnid Systems",
     period: "Jul 2025 — Present",
     bullets: [
@@ -17,7 +17,7 @@ export const EXPERIENCES: Experience[] = [
       "Designed and trained deep learning segmentation models to classify terrain, infrastructure, and surface using hyperspectral and RGB-D data for autonomous navigation and inspection.",
       "Utilized Unreal Engine to build high-fidelity robotic and drone simulation environments for sensor modeling, SLAM validation, and machine learning dataset generation, accelerating development and reducing real-world testing risk.",
       "Developed object detection models to identify and track airplanes from aerial and ground-based imagery, supporting autonomous drone navigation and airfield monitoring use cases.",
-      "Led operational strategy for robotics and drone-focused initiatives, aligning engineering, product, and business execution to deliver scalable autonomous systems."
+      "Led technical strategy for robotics and drone-focused initiatives, aligning engineering, product, and business execution to deliver scalable autonomous systems."
     ],
     skills: ["Python", "ROS", "CUDA", "TensorRT", "Unreal Engine", "Computer Vision", "Deep Learning", "NVIDIA Jetson"]
   },
@@ -29,7 +29,7 @@ export const EXPERIENCES: Experience[] = [
     bullets: [
       "Deployed Nokia Policy Controller on OpenStack in both VNF and CNF architectures, leveraging OpenStack CLI, HEAT templates for configuration management, and Kubernetes for container orchestration.",
       "Designed and implemented health check tools in Python and Bash for Kubernetes clusters for KDDI and T-Mobile, employing prometheus-client, requests, and shell scripting to monitor pod health, node performance, and service uptime.",
-      "Developed a DNS automation tool in Python for AT&T, utilizing libraries like zeep for SOAP API interactions, Incorporated large dataset manipulation using polars to efficiently process and manage bulk DNS records.",
+      "Developed a DNS automation tool in Python for AT&T, utilizing libraries like zeep for SOAP API interactions, and incorporated large dataset manipulation using polars to efficiently process and manage bulk DNS records.",
       "Created a custom backup management application in Python for PTA Australia's next-generation railway communications project, managing push/pull backups across over 40 nodes using paramiko, rsync and cron."
     ],
     skills: ["Python", "Kubernetes", "OpenStack", "Ansible", "Helm", "Bash", "Prometheus", "Grafana"]

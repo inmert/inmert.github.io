@@ -14,7 +14,7 @@ export default defineConfig({
       output: {
         // Split react and react-dom into a separate vendor chunk
         manualChunks(id) {
-          if (id.includes('node_modules/react') || id.includes('node_modules/react-dom')) {
+          if (/node_modules\/(react|react-dom|scheduler)\//.test(id)) {
             return 'react-vendor';
           }
         },

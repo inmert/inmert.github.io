@@ -1,33 +1,36 @@
+import { FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import { SOCIAL_LINKS } from '../data/socialLinks';
 
 export const Footer = () => (
-  <footer className="bg-black text-white py-12">
-    <div className="max-w-6xl mx-auto px-8">
+  <footer id="contact" className="bg-black text-white py-12">
+    <div className="max-w-6xl mx-auto px-8 xl:px-0">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
         {/* Brand & Description */}
         <div>
           <h3 className="text-2xl font-bold mb-4">
             portfolio<span className="text-red-500">.</span>Priyan
           </h3>
-          <p className="text-gray-400 mb-4">
-            Co-building the future of robotics and AI at Arachnid Systems. 
+          <p className="text-gray-400 max-w-md">
+            Co-building the future of robotics and AI at Arachnid Systems.
             Crafting intelligent systems that solve real-world challenges.
-          </p>
-          <p className="text-gray-400">
-            📍 Merritt Island, Florida, United States
           </p>
         </div>
 
         {/* Contact & Social */}
         <div className="md:ml-auto">
           <h4 className="text-lg font-bold mb-4">Connect</h4>
-          <div className="space-y-3 mb-4">
-            <p className="text-gray-400">
-              📧 <a href="mailto:priyan@arachnidsys.com" className="hover:text-red-500 transition-colors">
+          <ul className="space-y-3 mb-5 text-gray-400">
+            <li className="flex items-center gap-3">
+              <FaEnvelope className="shrink-0 text-red-500" aria-hidden="true" />
+              <a href="mailto:priyan@arachnidsys.com" className="hover:text-red-500 transition-colors">
                 priyan@arachnidsys.com
               </a>
-            </p>
-          </div>
+            </li>
+            <li className="flex items-center gap-3">
+              <FaMapMarkerAlt className="shrink-0 text-red-500" aria-hidden="true" />
+              Merritt Island, Florida, United States
+            </li>
+          </ul>
           <div className="flex gap-4">
             {SOCIAL_LINKS.map((link) => (
               <a
@@ -46,12 +49,9 @@ export const Footer = () => (
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div className="border-t border-gray-800 pt-8">
         <p className="text-gray-400 text-sm">
           © {new Date().getFullYear()} Priyan Rai. All rights reserved.
-        </p>
-        <p className="text-gray-400 text-sm">
-          Made with ❤️ using React, TypeScript & Tailwind CSS
         </p>
       </div>
     </div>

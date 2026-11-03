@@ -8,7 +8,6 @@ import {
   SiTensorflow,
   SiPytorch,
   SiUnrealengine,
-  SiAmazon,
   SiDocker,
   SiKubernetes,
   SiTerraform,
@@ -26,10 +25,12 @@ import {
   SiGnubash,
   SiR,
   SiUnity,
-  SiBlueprint
+  SiBlueprint,
+  SiWebassembly
 } from 'react-icons/si';
 
-{/* React icons */}
+// React icons
+import { FaAws, FaBug, FaFingerprint, FaKey, FaMicrochip, FaNetworkWired } from "react-icons/fa";
 import { FaJava } from "react-icons/fa6";
 import { IoGameController } from "react-icons/io5";
 import { FaRobot } from "react-icons/fa";
@@ -39,7 +40,7 @@ import { FaMagnifyingGlass } from "react-icons/fa6";
 import { FaEye } from "react-icons/fa";
 import { SiDeepl } from "react-icons/si";
 
-{/* Dev Icons */}
+// Dev Icons
 import CsharpOriginal from 'devicons-react/icons/CsharpOriginal';
 import RosOriginal from 'devicons-react/icons/RosOriginal';
 import JenkinsOriginal from 'devicons-react/icons/JenkinsOriginal';
@@ -69,6 +70,7 @@ export const SKILLS: SkillCategory = {
     { name: "PyTorch", icon: SiPytorch, color: "#EE4C2C" },
     { name: "OpenCV", icon: SiOpencv, color: "#5C3EE8" },
     { name: "React", icon: SiReact, color: "#61DAFB" },
+    { name: "WebAssembly", icon: SiWebassembly, color: "#654FF0" },
     { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
     { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
     { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
@@ -93,13 +95,20 @@ export const SKILLS: SkillCategory = {
   ],
   "Cloud & DevOps": [
     { name: "OpenStack", icon: OpenstackOriginal, color: "#FF8C00" },
-    { name: "AWS", icon: SiAmazon, color: "#FF9900" },
+    { name: "AWS", icon: FaAws, color: "#FF9900" },
     { name: "Docker", icon: SiDocker, color: "#2496ED" },
     { name: "Kubernetes", icon: SiKubernetes, color: "#326CE5" },
     { name: "Terraform", icon: SiTerraform, color: "#7B42BC" },
     { name: "CI/CD", icon: JenkinsOriginal, color: "#4CAF50" },
     { name: "Git", icon: SiGit, color: "#F05032" },
     { name: "Linux", icon: LinuxOriginal, color: "#FCC624" }
+  ],
+  "Security": [
+    { name: "Reverse Engineering", icon: FaMicrochip, color: "#EF4444" },
+    { name: "Vulnerability Research", icon: FaBug, color: "#EF4444" },
+    { name: "Cryptanalysis", icon: FaKey, color: "#EF4444" },
+    { name: "Digital Forensics", icon: FaFingerprint, color: "#EF4444" },
+    { name: "Network Analysis", icon: FaNetworkWired, color: "#EF4444" }
   ],
   "Game Development": [
     { name: "Unreal Engine", icon: SiUnrealengine, color: "#0E1128" },

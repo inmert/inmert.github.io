@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { FaTimes } from 'react-icons/fa';
 import { EXPERIENCES } from '../data/experiences';
 
@@ -7,6 +8,34 @@ interface ExperienceModalProps {
 }
 
 export const ExperienceModal = ({ modalIndex, onClose }: ExperienceModalProps) => {
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const isOpen = modalIndex !== null;
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const previouslyFocused = document.activeElement as HTMLElement | null;
+    const closeButton = closeButtonRef.current;
+    closeButton?.focus();
+    document.body.style.overflow = 'hidden';
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') onClose();
+      // The close button is the only focusable element, so Tab stays on it
+      if (event.key === 'Tab') {
+        event.preventDefault();
+        closeButton?.focus();
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+      previouslyFocused?.focus();
+    };
+  }, [isOpen, onClose]);
+
   if (modalIndex === null) return null;
 
   const experience = EXPERIENCES[modalIndex];
@@ -15,10 +44,17 @@ export const ExperienceModal = ({ modalIndex, onClose }: ExperienceModalProps) =
     <>
       <div className="fixed inset-0 bg-black opacity-80 z-50" onClick={onClose}></div>
       <div className="fixed inset-0 flex items-center justify-center z-50 pointer-events-none p-4">
-        <div className="bg-white rounded-lg max-w-lg w-full p-6 relative pointer-events-auto max-h-[90vh] overflow-y-auto">
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="experience-modal-title"
+          className="bg-white rounded-lg max-w-lg w-full p-6 relative pointer-events-auto max-h-[90vh] overflow-y-auto"
+        >
           <button
+            ref={closeButtonRef}
             className="absolute top-4 right-4 text-black hover:text-red-500"
             onClick={onClose}
+            aria-label="Close"
           >
             <FaTimes size={24} />
           </button>
@@ -32,7 +68,7 @@ export const ExperienceModal = ({ modalIndex, onClose }: ExperienceModalProps) =
               />
             </div>
             <div>
-              <h3 className="text-xl font-bold">{experience.title}</h3>
+              <h3 id="experience-modal-title" className="text-xl font-bold pr-8">{experience.title}</h3>
               <p className="text-red-500 font-semibold">
                 {experience.company} · <span className="text-gray-500 font-normal">{experience.period}</span>
               </p>

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useCallback, useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { MobileMenu } from './components/MobileMenu';
 import { AboutSection } from './components/AboutSection';
@@ -14,12 +14,15 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [modalIndex, setModalIndex] = useState<number | null>(null);
 
+  const closeModal = useCallback(() => setModalIndex(null), []);
+
+  // Sections only exist after React renders, so honor deep links like /#projects here
   useEffect(() => {
-    window.scrollTo(0, 0);
+    document.getElementById(window.location.hash.slice(1))?.scrollIntoView();
   }, []);
 
   return (
-    <div className="min-h-screen bg-white scroll-smooth">
+    <div className="min-h-screen bg-white">
       <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <MobileMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
 
@@ -33,7 +36,7 @@ function App() {
       </main>
       <Footer />
 
-      <ExperienceModal modalIndex={modalIndex} onClose={() => setModalIndex(null)} />
+      <ExperienceModal modalIndex={modalIndex} onClose={closeModal} />
     </div>
   );
 }

@@ -11,7 +11,7 @@ export const ExperienceCard = ({ experience, index, onMoreClick }: ExperienceCar
     <div className="flex flex-col md:flex-row gap-4 items-start md:items-center mb-4">
       <div className="shrink-0">
         <div className="w-14 h-14 bg-gray-100 rounded-lg flex items-center justify-center overflow-hidden">
-          <img src={experience.logo} alt={`${experience.company} logo`} className="w-full h-full object-contain" />
+          <img src={experience.logo} alt={`${experience.company} logo`} loading="lazy" className="w-full h-full object-contain" />
         </div>
       </div>
       <div className="flex-1">
@@ -23,9 +23,11 @@ export const ExperienceCard = ({ experience, index, onMoreClick }: ExperienceCar
     </div>
 
     <div className="relative flex-1 overflow-hidden">
-      <ul className="list-disc list-inside text-gray-700 space-y-1">
+      <ul className="list-disc pl-5 text-gray-700 space-y-1">
         {experience.bullets.slice(0, 2).map((bullet, i) => (
-          <li key={i} className={i === 1 ? "line-clamp-2" : ""}>{bullet}</li>
+          <li key={i}>
+            <span className={i === 1 ? "line-clamp-2" : ""}>{bullet}</span>
+          </li>
         ))}
       </ul>
       <div className="absolute bottom-0 left-0 right-0 h-12 bg-linear-to-t from-white to-transparent pointer-events-none"></div>
